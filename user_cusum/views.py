@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from .models import Event
 from django.urls import reverse_lazy
 
@@ -27,3 +27,6 @@ class EventDeleteView(DeleteView):
   template_name = 'event_delete.html'
   model = Event
   success_url = reverse_lazy('event_list')
+
+class AboutViewPage(TemplateView):
+  template_name = 'about.html'

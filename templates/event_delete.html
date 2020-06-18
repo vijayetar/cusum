@@ -2,9 +2,11 @@
 {% block content %}
 <form action = "" method ="POST">
     {% csrf_token %}
-    <h3>Event: {{event.event_name}}</h3>
-    <h4> Name : {{event.event_user}}</h4>
-    <h4>Date: {{event.event_date}}</h4>
+    <ul>
+      <li>Event: {{event.event_name}}</li>
+      <li> Name : {{event.event_user}}</li>
+      <li>Date: {{event.event_date}}</li>
+    </ul>
     <p> Do you really want to delete</p>
   <input type="submit" value ="Delete">
 </form>
