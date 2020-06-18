@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action = "" method ="POST">
+    {% csrf_token %}
+    <h3>Event: {{event.event_name}}</h3>
+    <h4> Name : {{event.event_user}}</h4>
+    <h4>Date: {{event.event_date}}</h4>
+    <p> Do you really want to delete</p>
+  <input type="submit" value ="YES">
+</form>
+
+<a href="/"><button>HOME</button></a>
+
+{% endblock content %}

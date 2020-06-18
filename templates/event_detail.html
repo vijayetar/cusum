@@ -7,4 +7,8 @@
     <li>Date: {{event.event_date}}</li>
     <li>Outcome: {{event.event_outcome}}</li>
   </ul>
+  <a href="{% url 'event_update' event.pk%}"><button>+Edit</button></a>
+  <a href="{% url 'event_delete' event.pk%}"><button>+Delete</button></a>
+  <a href="/"><button>HOME
+  </button></a>
 {% endblock content %}

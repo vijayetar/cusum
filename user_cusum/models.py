@@ -2,6 +2,7 @@ from django.db import models
 import datetime
 from django.contrib.auth import get_user_model
 import django.utils
+from django.urls import reverse
 
 OUTCOMES = (
   (1,'SUCCESS'),
@@ -26,5 +27,8 @@ class Event(models.Model):
     # return self.event_name
     return f"{self.event_user} did {self.event_name} on {self.event_date}"
     
+  # def get_absolute_url(self):
+  #   return reverse('event_detail',args=[str(self.id)])
+  
   def get_absolute_url(self):
-    return reverse('event_detail',args=[str(self.id)])
+    return reverse('event_list')

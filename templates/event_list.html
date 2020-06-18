@@ -3,7 +3,9 @@
   <h3> Event Lists </h3>
   <ul>
     {% for obj in object_list %}
-    <li>   {{obj.event_name}}    by    {{obj.event_user}}</li>
+    <li>  <a href = {% url 'event_detail' obj.pk %}> {{obj.event_name}} </a>   by    {{obj.event_user}}</li>
     {% endfor %}
   </ul>
+  <a href="{% url 'event_create'%}"><button>+ ADD
+  </button></a>
 {% endblock content %}
