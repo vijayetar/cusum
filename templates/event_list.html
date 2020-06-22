@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%block content %}
+  <h1> Event Lists </h1>
+  <ul>
+    {% for obj in object_list %}
+    <li>  <a href = {% url 'event_detail' obj.pk %}> {{obj.event_name}} </a>   by    {{obj.event_user}}</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'event_create'%}"><button>+ ADD
+  </button></a>
+{% endblock content %}
